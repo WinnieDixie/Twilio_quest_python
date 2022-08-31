@@ -1,0 +1,71 @@
+import sys
+
+#class = {Citizen}
+#Citizen = {
+    #'docstring' : 'describes'
+    #'init method' : 'first_name last_name' assigns instance variables
+    #'class variable' = 'greeting' -> string set "For the glory of Python!"
+#}
+
+#init method = 9.3.2 Class objects 
+#The instantiation operation (“calling” a class object) creates an empty object.
+#Many classes like to create objects with instances customized to a specific initial state.
+#Therefore a class may define a special method named __init__()
+#https://docs.python.org/3/tutorial/classes.html?utm_source=twilioquest-3
+
+class Citizen:
+    greeting = 'For the glory of Python!'
+
+    def _init_(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+
+    def full_name(self):
+        return f'{self.first_name} {self.last_name}'
+#first try error citizen not defined
+class Citizen:
+    """This is a doc string"""
+
+    def _init_(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+
+    def full_name(self):
+        return f'({self.first_name} {self.last_name})'
+    greeting = 'For the glory of Python!'
+#ERROR-Looks like there's a small problem. Could not create an object with a two argument init function.
+   class Citizen:
+    '''This is a doc string'''
+
+    def _init_(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+
+    def full_name(self):
+        return f"({self.first_name} {self.last_name})"
+    greeting = 'For the glory of Python!'
+ #ERROR- same as before
+ class Citizen:
+    '''This is a doc string'''
+    greeting = 'For the glory of Python!'
+
+    def _init_(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+
+    def full_name(self):
+        return f'{self.first_name} {self.last_name}'
+#Error again
+class Citizen:
+    '''This is a doc string'''
+    greeting = 'For the glory of Python!'
+
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+        
+
+    def full_name(self):
+        return f'{self.first_name} {self.last_name}'
+ #SUCCESS- Copied and Pasted text from https://github.com/aydotvin
+        
